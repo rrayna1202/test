@@ -1,0 +1,269 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+li{
+    list-style:none;
+    font-family: "Noto Serif TC", serif;
+    color: #142734;
+}
+p {
+    font-family: "Noto Serif TC", serif;
+    color: #142734;
+}
+a{
+    text-decoration:none;
+    font-family: "Noto Serif TC", serif;
+    color: #142734;
+}
+body {
+    /* 內文背景 */
+    background-color:#e5e4e3;
+}
+
+header {
+    /* header背景 */
+    /* 不是list好像就不能改文字顏色 */
+    background-color:#a2b5bb;
+}
+    .navbar {
+        min-height:70px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:0 20px;
+    }
+    .nav-branding {
+        margin-right: auto;
+        font-size:25px;
+        color: #425257;
+        /* padding: 10px;
+        border-radius:10px; */
+    }
+    .nav-branding:hover {
+        transition:0.7s ease;
+        color: #e5e4e3;
+    }
+    .nav-menu {
+        /* 整個header文字區塊 */
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+        .nav-item {
+            /* 單個header文字區塊 */
+            padding:0 30px;
+        }
+        .nav-link {
+            /* header文字本人 */
+            color: #425257;
+            font-size: 25px;
+        }
+        .nav-link:hover {
+            transition:0.7s ease;
+            color:#e5e4e3;
+        }
+
+        .hamburger {
+            /* hamburger的圖示 */
+            display:none;
+            cursor:pointer;
+        }
+        .side-close {
+            cursor: pointer;
+        }
+        .sidebar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            z-index: 999;
+            border-radius:10px;
+            background-color: rgba(96, 125, 135, 0.3);
+            backdrop-filter: blur(10px); /*glass*/
+            box-shadow: -7px 0 7px rgba(0,0,0,0.1);
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+            .side-item {
+                /* sidemenu的文字區塊 */
+                padding: 15px 20px;
+                /* font-size: 25px; */
+                border-radius:10px;
+                width: 100%;
+            }
+            .side-link {
+                /* sidemenu的文字本人 */
+                padding:0 30px;
+                font-size: 25px;
+                width: 100%;
+                color: #425257;
+            }
+            .side-link:hover {
+                transition:0.7s ease;
+                color: #e5e4e3;
+            }
+            .side-close {
+                /* 叉叉的圖示 */
+                padding: 30px 20px 15px 20px;
+                font-size: 20px;
+                border-radius:10px;
+                width: 100%;
+            }
+
+    .dropmenu {
+        position: relative;
+        display: inline-block;
+    }
+    .search-img {
+        width: 25px;
+        aspect-ratio: 1 / 1;
+        border-radius: 5px;
+        margin: 10px 0 0;
+    }
+    .search-box {
+        position: absolute;
+        top: 100%;
+        right: -15px;
+        background-color:rgba(66, 82, 87, 0.8);
+        padding: 10px;
+        border-radius: 5px;
+        display: none;
+    }
+    .dropmenu:hover .search-box {
+        display: block;
+    }
+    .input-box {
+        background-color: transparent;
+        color: #e5e4e3;
+        border: 1px solid #e5e4e3;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    input::placeholder {
+        color: rgba(229, 228, 227, 0.8);
+        font-family: "Noto Serif TC", serif;
+    }
+    input:focus {
+        outline: none;
+        border-color: #a2b5bb;
+    }
+            
+
+@media(max-width: 800px) {
+    .nav-item {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+
+@media(max-width: 400px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+
+/* section部分 */
+
+.path {
+    display: flex;
+    padding: 5px 10px;
+    font-size: 15px;
+}
+.path-link {
+    color: #142734;
+}
+section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;  /* 如果太擠了，會自己換行 */
+    gap: 20px;
+}
+    .index-rec {
+        text-align: center;
+        flex: 1;  /* 每張佔等寬比例 */
+        margin: 10px;
+    }
+        .index-rec-img {
+            width: 45%;
+            aspect-ratio: 2 / 3;  /* 強制維持 寬:高 = 2:3 */
+            object-fit: cover;  /* 保持固定比例，但邊邊可能被剪掉 */
+            border-radius: 8px;
+        }
+        .index-rec-img:hover {
+            transition:0.7s ease;
+            box-shadow:10px 15px 15px rgba(0,0,0,0.15);
+        }
+        .index-rec-title {
+            margin: 10px 0;
+        }
+        .index-rec-title-c {
+            font-size: 25px;
+        }
+        .index-rec-title-j {
+            font-size: 15px;
+            font-family: "Noto Serif JP", serif;
+        }
+        .index-rec-title-c,
+        .index-rec-title-j {
+            color: #142734;
+        }
+        .index-rec-title:hover .index-rec-title-c,
+        .index-rec-title:hover .index-rec-title-j {
+            transition: 0.7s ease;
+            color:#576c71;
+            /* text-shadow:2px 2px 5px rgba(0,0,0,0.2); */
+        }
+        .index-rec-words {
+            font-size: 17px;
+            color: #142734;
+            position: relative;
+            font-weight: bold;
+            display: inline-block; /* 讓底色對準文字寬度 */
+            overflow: hidden; /* 防止動畫超出範圍 */
+        }
+        .index-rec-words::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0.1em;
+            width: 100%;
+            height: 0.5em;
+            background-color: #9fd6e7; /* 螢光筆顏色 */
+            z-index: -1; /* 放到文字下面 */
+            border-radius: 0.2em;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 1.5s ease;
+        }
+        /*  highlight動畫 */
+        .index-rec-words-all:hover .index-rec-words::before {
+            transform: scaleX(1);
+        }
+        
+/* footer */
+footer {
+    height: 70px;
+    background-color: #a2b5bb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+    .footer-words {
+        font-size: 17px;
+        color: #425257;
+        margin: 0 0 5px;
+    }
+    .footer-copyright {
+        font-size: 10px;
+        color: #425257;
+    }
